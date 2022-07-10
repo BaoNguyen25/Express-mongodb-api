@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', authorController.getAllAuthor);
 
-//router.get('/:id', getAuthor);
+router.get('/:id', authorController.getAuthor);
 
 router.post('/', authorController.createAuthor);
 

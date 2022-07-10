@@ -3,11 +3,11 @@ const bookController = require("../controllers/bookController");
 
 const router = express.Router();
 
-//router.get('/', getAllBook);
+router.get('/', bookController.getAllBook);
 
 //router.get('/:id', getBook);
 
-//router.post('/', createBook);
+router.post('/', bookController.createBook);
 
 //router.put('/:id', updateBook);
 

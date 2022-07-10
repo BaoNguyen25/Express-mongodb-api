@@ -3,13 +3,14 @@ const mongoose = require("mongoose");
 const authorSchema = new mongoose.Schema({
     name: {
         type: String,
+        required: true,
     },
 
     year: {
         type: Number,
     },
 
-    book: [
+    books: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Book",

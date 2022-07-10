@@ -20,6 +20,16 @@ const authorController = {
             res.status(500).json(err);
         }
     },
+
+    getAuthor : async (req, res) => {
+        try {
+            const author = await Author.findById(req.params.id).populate("books");
+            res.status(200).json(author);
+        }catch(err) {
+            res.status(500).json(err);
+        }
+    }
+
 };
 
 module.exports = authorController
