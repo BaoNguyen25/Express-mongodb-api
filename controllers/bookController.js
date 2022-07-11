@@ -24,6 +24,26 @@ const bookController = {
             res.status(500).json(err);
         }
     },
+
+    getBook : async(req, res) => {
+        try {
+            const book = await Book.findById(req.params.id).populate("author");
+            res.status(200).json(book);
+        }catch (err) {
+            res.status(500).json(err);
+        }
+    },
+
+    updateBook : async (req, res) => {
+        try {
+            const book = await Book.findById(req.params.id);
+            await book.updateOne({$set : req.body});
+            res.status(200).json("Update Successfully");
+        }catch(err) {
+            res.status(500).json(err);
+        }
+    }
+
 };
 
 module.exports = bookController;

@@ -5,12 +5,12 @@ const router = express.Router();
 
 router.get('/', bookController.getAllBook);
 
-//router.get('/:id', getBook);
+router.get('/:id', bookController.getBook);
 
 router.post('/', bookController.createBook);
 
-//router.put('/:id', updateBook);
+router.put('/:id', bookController.updateBook);
 
-//router.delete('/:id', deleteBook);
+//router.delete('/:id', bookController.deleteBook);
 
 module.exports = router;
