@@ -19,12 +19,16 @@ const authorSchema = new mongoose.Schema({
 });
 
 const bookSchema = new mongoose.Schema({
-    name: {
+    title: {
         type: String,
         required: true,
     },
 
-    publisedDate: {
+    publishedDate: {
+        type: String,
+    },
+
+    description: {
         type: String,
     },
 
